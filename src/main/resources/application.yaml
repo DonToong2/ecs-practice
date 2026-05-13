@@ -1,3 +1,18 @@
 spring:
   application:
     name: ecs-practice-starter
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+  file:
+    name: /app/logs/app.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

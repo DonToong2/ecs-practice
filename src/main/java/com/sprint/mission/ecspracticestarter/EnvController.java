@@ -15,16 +15,17 @@ public class EnvController {
   @Value("${DB_HOST:#{null}}")
   private String dbHost;
 
-  @Value("${DB_PASSWORD:#{null}")
+  @Value("${DB_PASSWORD:#{null}}")
   private String dbPassword;
 
   @GetMapping("/env")
   public String showEnv() {
-    return String.format("""
-        SPRING_PROFILES_ACTIVE = %S
-        DB_HOST = %S
-        DB_PASSWORD = %S
-        """, springProfilesActive, dbHost, dbPassword);
+//    return String.format("""
+//        SPRING_PROFILES_ACTIVE = %s
+//        DB_HOST = %s
+//        DB_PASSWORD = %s
+//        """, springProfilesActive, dbHost, dbPassword);
+    return "현재 실행 환경 : " + System.getenv("SPRING_PROFILES_ACTIVE");
   }
 
 }
