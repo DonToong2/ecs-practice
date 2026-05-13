@@ -95,7 +95,7 @@ jobs:
         run: |
           aws ecs update-service \
           --cluster ${{ secrets.ECS_CLUSTER }} \
-          --service ${{ secrets.ECS_SERVICE }}
+          --service ${{ secrets.ECS_SERVICE }} \
           --force-new-deployment
 
       # 13. 배포 완료 대기(서비스가 안정 상태가 될 때까지)
