@@ -43,6 +43,14 @@ jobs:
           echo "Image tag: $IMAGE_TAG"
           echo "Repository URI: $REPO_URI"
 
+      # Gradle 권한 설정
+      - name: Gradle 권한 설정
+        run: chmod +x gradlew
+
+      # Gradle 빌드 및 테스트
+      - name: Gradle 빌드 및 테스트
+        run: ./gradlew clean build
+
       # Docker 빌드
       - name: Docker Build
         run: |
